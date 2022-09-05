@@ -1,0 +1,34 @@
+.custom_input {
+    position: relative;
+    width: 100%;
+}
+.custom_input input {
+    background-color: #0000007c;
+    border-radius: 2vh;
+    height: 3rem;
+    padding-left: 1rem;
+    width: calc(100% - 1rem);
+}
+.custom_input .placeholder {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    color: #ffffff44;
+    transition: 0.25s;
+}
+.custom_input .icon_button_container {
+    position: absolute;
+    top: 50%;
+    right: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+    transform: translateY(-50%) rotate(90deg);
+    transition: 0.35s;
+    opacity: 0;
+    visibility: hidden;
+}
+.custom_input .icon_button_container.shown {
+    opacity: 1;
+    transform: translateY(-50%) rotate(0deg);
+    visibility: visible;
+}

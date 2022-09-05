@@ -1,0 +1,27 @@
+.header {
+    padding: 1rem;
+    padding-top: 3rem;
+    max-height: 8%;
+}
+.header h1 {
+    margin: 0;
+    padding: 0.75rem;
+    padding-left: 2rem;
+    background-image: linear-gradient(to right, var(--main-colour), transparent);
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 0.75rem;
+    transition: 0.35s;
+    cursor: pointer;
+    display: flex;
+}
+.header h1 div {
+    --rotation: 0deg;
+
+    min-width: 1rem;
+    transition: 0.35s;
+    text-shadow: -0.35rem 0.5rem 0.2rem #00000055;
+}
+.header h1:hover div {
+    margin-right: 0.25rem;
+    transform: rotate(var(--rotation)) scale(1.05);
+}

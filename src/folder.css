@@ -1,0 +1,56 @@
+.folder {
+    --colour: var(--main-colour);
+    --rotation: 10deg;
+
+    position: relative;
+    display: grid;
+    grid-auto-flow: column;
+    place-items: center;
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+    cursor: pointer;
+}
+.folder svg {
+    width: 3rem;
+    height: 3rem;
+    transition: 0.35s;
+    fill: white;
+    justify-self: flex-start;
+}
+.folder .name {
+    transition: 0.35s;
+    justify-self: flex-start;
+    text-decoration: none;
+}
+.folder .icon_button_container {
+    width: 2rem;
+    height: 2rem;
+    justify-self: flex-end;
+}
+.folder .underline {
+    position: absolute;
+    bottom: -0.75rem;
+    left: 0%;
+    width: 0%;
+    height: 0.5rem;
+    background-color: var(--colour);
+    border-radius: 100vh;
+    transition: 0.35s;
+}
+
+.folder:is(:hover, :focus, .selected) .name {
+    letter-spacing: 0.1rem;
+    color: var(--colour);
+}
+.folder:is(:hover, :focus, .selected) .underline {
+    width: 100%;
+}
+.folder:is(:hover, :focus, .selected) svg {
+    transform: rotate(var(--rotation)) scale(1.05);
+    fill: var(--colour);
+}
+.folder:is(:hover, :focus, .selected) .icon_button_container {
+    transform: rotate(0deg);
+    opacity: 1;
+    visibility: visible;
+}

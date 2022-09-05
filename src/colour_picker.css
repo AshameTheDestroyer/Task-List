@@ -1,0 +1,29 @@
+.colour_picker {
+    display: grid;
+    padding: 1rem;
+    place-items: center;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+}
+.colour_picker .colour_field {
+    --colour: red;
+    --rotation: 0deg;
+
+    background-color: var(--colour);
+    width: 3.5rem;
+    height: 3.5rem;
+    border: 0.3rem solid white;
+    border-radius: 1vh;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.colour_picker .colour_field:is(:hover, :focus) {
+    transform: scale(1.1) rotate(var(--rotation));
+}
+.colour_picker .colour_field.selected {
+    width: 4rem;
+    height: 4rem;
+    box-shadow:
+        0 0 1rem white,
+        0 0 2rem var(--colour);
+}

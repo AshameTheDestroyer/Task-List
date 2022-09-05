@@ -1,0 +1,87 @@
+.message_box {
+    --width: 50%;
+    --height: 50%;
+    --colour: var(--main-colour);
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: var(--width);
+    height: var(--height);
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    border-radius: 0.5vh;
+    border-top-left-radius: 6vh;
+    border-bottom-right-radius: 6vh;
+    background-color: #0000007c;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto 1fr auto;
+    transition: 0.35s;
+    opacity: 0;
+    visibility: hidden;
+}
+.message_box::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    background-color: #0000007c;
+    z-index: -1;
+}
+.message_box.shown {
+    opacity: 1;
+    visibility: visible;
+}
+
+.message_box .header {
+    font-size: 2rem;
+    background-color: var(--colour);
+    padding: 0.75rem;
+    padding-left: 2rem;
+    height: 100%;
+    min-height: calc(100% - 1.5rem);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    cursor: default;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+}
+.message_box .header .title {
+    background-color: transparent;
+    width: calc(100% - 1.25rem);
+}
+.message_box .header .icon_button_container {
+    justify-self: end;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.message_box .message {
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: transparent;
+    resize: none;
+    padding: 1.5rem;
+}
+
+.message_box .buttons {
+    display: flex;
+    place-content: end;
+    gap: 1rem;
+    padding: 1.5rem;
+}
+.message_box .buttons button {
+    background-color: var(--colour);
+    border-radius: 2vh;
+    padding: 1rem;
+    padding-right: 3rem;
+    padding-left: 3rem;
+    display: flex;
+    text-align: center;
+}
